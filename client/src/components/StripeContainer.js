@@ -1,14 +1,17 @@
 import { Elements } from "@stripe/react-stripe-js"
 import { loadStripe } from "@stripe/stripe-js"
+import PaymentForm from "./PaymentForm"
 
 const StripeContainer = () => {
-   const PUBLIC_KEY = 'pk_test_51LQwRsFZMGtUIX9dXG1PR3L6YxXHCUoAKDHXa3EU5KcKiMegpFlUkJhmK4769Rvy6aZFxMbpD23PXQNqtFNC8GDf00ogW7iezP'
+   const PUBLIC_KEY = ''
    const stripeTestPromise = loadStripe(PUBLIC_KEY)
    
    return (
+      <div>
       <Elements stripe={stripeTestPromise}>
          <PaymentForm />
       </Elements>
+      </div>
    )
 }
 

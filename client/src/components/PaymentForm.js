@@ -1,12 +1,33 @@
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import axios from 'axios'
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js"
+import axios from "axios"
 import React, { useState } from 'react'
-import { Form } from "react-router-dom";
+
+
+const CARD_OPTIONS = {
+   iconStyle: "solid",
+   style: {
+      base: {
+         iconColor: "#c4f0ff",
+         color: "#fff",
+         fontWeight: 500,
+         fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
+         fontSize: "16px",
+         fontSmoothing: "antialiased",
+         ":-webkit-autofill": { color: "#fce883" },
+         "::placeholder": { color: "#87bbfd" }
+      },
+      invalid: {
+         iconColor: "#ffc7ee",
+         color: "#ffc7ee"
+      }
+   }
+}
 
 const PaymentForm = () => {
    const [success, setSuccess] = useState(false)
    const stripe = useStripe()
    const elements = useElements()
+
 
    const handleSubmit = async (e) => {
       e.preventDefault()
@@ -15,19 +36,22 @@ const PaymentForm = () => {
          card: elements.getElement(CardElement)
       })
 
+
       if (!error) {
          try {
-            const (id) = paymentMethod
+            const { id } = paymentMethod
             const response = await axios.post("http://localhost:4000/payment", {
                amount: 1000,
                id
             })
+
             if (response.data.success) {
-               console.log("Successful Payment")
+               console.log("Successful payment")
                setSuccess(true)
             }
+
          } catch (error) {
-            console.log('Error', error)
+            console.log("Error", error)
          }
       } else {
          console.log(error.message)
@@ -35,16 +59,23 @@ const PaymentForm = () => {
    }
 
    return (
-      <div>
-         {
-         !success ?
-         <form onSubmit={handleSubmit}>
-            <fieldset className="FormGroup">
-               .pk_test_51LQwRsFZMGtUIX9dXG1PR3L6YxXHCUoAKDHXa3EU5KcKiMegpFlUkJhmK4769Rvy6aZFxMbpD23PXQNqtFNC8GDf00ogW7iezP
-            </fieldset>
-         </form>
-      }
-      </div>
+      <>
+         {!success ?
+            <form onSubmit={handleSubmit}>
+               <fieldset className="FormGroup">
+                  <div className="FormRow">
+                     <CardElement options={CARD_OPTIONS} />
+                  </div>
+               </fieldset>
+               <button>Pay</button>
+            </form>
+            :
+            <div>
+               <h2>You just bought a sweet spatula congrats this is the best decision of you're life</h2>
+            </div>
+         }
+
+      </>
    )
 }
 

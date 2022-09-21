@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Convert from './pages/Convert';
+import PaymentForm from './components/PaymentForm';
 // import Header from './components/Header'
 // import Layout from './components/Layout';
 
@@ -14,12 +15,13 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <nav>
-        <div>
+        {/* <div> */}
           <Link to='/' > HOME </Link>
           <Link to='/login'> LOGIN </Link>
           <Link to='/signup'> SIGNUP </Link>
           <Link to='/convert'> CONVERT </Link>
-        </div>
+          <Link to='/paymentform'> PAYMENT FORM </Link>
+        {/* </div> */}
       </nav>
         {/* <Layout> */}
           <Routes>
@@ -27,6 +29,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/convert' element={<Convert />} />
+            <Route path='/paymentform' element={<PaymentForm />} />
           </Routes>
         {/* </Layout> */}
       </BrowserRouter>
