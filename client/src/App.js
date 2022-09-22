@@ -20,7 +20,7 @@ function App() {
           <Link to='/login'> LOGIN </Link>
           <Link to='/signup'> SIGNUP </Link>
           <Link to='/convert'> CONVERT </Link>
-          <Link to='/paymentform'> PAYMENT FORM </Link>
+          {/* <Link to='/paymentform'> PAYMENT FORM </Link> */}
         {/* </div> */}
       </nav>
         {/* <Layout> */}
@@ -29,7 +29,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/convert' element={<Convert />} />
-            <Route path='/paymentform' element={<PaymentForm />} />
+            {/* <Route path='/paymentform' element={<PaymentForm />} /> */}
           </Routes>
         {/* </Layout> */}
       </BrowserRouter>
