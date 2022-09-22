@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter>
       <nav>
         {/* <div> */}
-          <Link to='/' > HOME </Link>
+          <Link to='/'> HOME </Link>
           <Link to='/login'> LOGIN </Link>
           <Link to='/signup'> SIGNUP </Link>
           <Link to='/convert'> CONVERT </Link>
