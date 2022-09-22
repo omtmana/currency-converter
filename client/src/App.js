@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './styles/App.css'
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -11,26 +11,34 @@ import PaymentForm from './components/PaymentForm';
 // import Layout from './components/Layout';
 
 function App() {
+  const [convert, setConvert] = useState([])
+
+  useEffect(() => {
+    fetch('https://api.exchangerate.host/convert?from=USD&to=PHP')
+      .then(res => res.json())
+      .then((convert) => setConvert([convert]))
+    // .then((data) => console.log(data))
+  }, [])
   return (
     <div className="App">
       <BrowserRouter>
-      <nav>
-        {/* <div> */}
+        <nav>
+          {/* <div> */}
           <Link to='/'> HOME </Link>
           <Link to='/login'> LOGIN </Link>
           <Link to='/signup'> SIGNUP </Link>
           <Link to='/convert'> CONVERT </Link>
           {/* <Link to='/paymentform'> PAYMENT FORM </Link> */}
-        {/* </div> */}
-      </nav>
+          {/* </div> */}
+        </nav>
         {/* <Layout> */}
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<Signup />} />
-            <Route path='/convert' element={<Convert />} />
-            {/* <Route path='/paymentform' element={<PaymentForm />} /> */}
-          </Routes>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/convert' element={<Convert convert={convert} setConvert={setConvert}/>} />
+          {/* <Route path='/paymentform' element={<PaymentForm />} /> */}
+        </Routes>
         {/* </Layout> */}
       </BrowserRouter>
     </div>

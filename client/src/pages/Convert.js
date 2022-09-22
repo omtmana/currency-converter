@@ -1,15 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import ConvertContainer from '../components/ConvertContainer'
 
-const Convert = () => {
-   const [convert, setConvert] = useState([])
-
-   useEffect(() => {
-      fetch('https://api.exchangerate.host/convert?from=USD&to=PHP')
-      .then(res => res.json())
-      .then((convert) => setConvert([convert]))
-      // .then((data) => console.log(data))
-   }, [])
+const Convert = ({convert}) => {
 // console.log('convert', convert)
    return (
       <div className="convert">
@@ -17,7 +9,7 @@ const Convert = () => {
             <h1> USD <span> PHP </span> </h1>
             {
                convert?.map((exchange) => {
-                  return <ConvertContainer key={exchange.id }exchange={exchange}/>
+                  return <ConvertContainer key={exchange.id } exchange={exchange}/>
                })
             }
          </div>
