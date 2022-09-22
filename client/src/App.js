@@ -33,10 +33,10 @@ function App() {
         </nav>
         {/* <Layout> */}
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home convert={convert}/>} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
-          <Route path='/convert' element={<Convert convert={convert} setConvert={setConvert}/>} />
+          <Route path='/convert' element={<Convert convert={convert} />} />
           {/* <Route path='/paymentform' element={<PaymentForm />} /> */}
         </Routes>
         {/* </Layout> */}
