@@ -4,7 +4,7 @@ const Home = ({ convert }) => {
    return (
       <div className="home">
             <div className="home-banner">
-               <h1> Money Transfer</h1>
+            <h1 style={{ fontSize: "3em", fontFamily:"Caveat"}}> Money Transfer</h1>
                <h4> Pera Padala </h4>
                <h2> 24/7 </h2>
             </div>

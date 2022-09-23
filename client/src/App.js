@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <nav>
+        <nav className='nav'>
           {/* <div> */}
           <Link to='/'> HOME </Link>
           <Link to='/login'> LOGIN </Link>
