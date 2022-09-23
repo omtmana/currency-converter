@@ -7,9 +7,9 @@ const ConvertContainer = ({ exchange }) => {
    const total = (floatDollar * result).toFixed(2)
    const resultRound = result.toFixed(2)
 
-
    // console.log('dollar', typeof(parseFloat(dollar)))
    // console.log('floatDollar',floatDollar)
+   
    return (
       <div>
          <div>
@@ -25,9 +25,7 @@ const ConvertContainer = ({ exchange }) => {
                   value={dollar}
                   onChange={e => setDollar(e.target.value)}
                />
-               {/* <button></button> */}
             </form>
-            {/* <button> Submit </button> */}
             <p> Total: {total} </p>
          </div>
       </div>
