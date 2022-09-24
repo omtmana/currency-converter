@@ -25,10 +25,10 @@ function App() {
       <BrowserRouter>
         <nav className='nav'>
           {/* <div> */}
-          <Link to='/'> HOME </Link>
-          <Link to='/login'> LOGIN </Link>
-          <Link to='/signup'> SIGNUP </Link>
-          <Link to='/convert'> CONVERT </Link>
+          <Link to='/' style={{ textDecoration: "none" }}> HOME </Link>
+          <Link to='/login' style={{ textDecoration: "none" }}> LOGIN </Link>
+          <Link to='/signup' style={{ textDecoration: "none" }}> SIGNUP </Link>
+          <Link to='/convert' style={{ textDecoration: "none" }}> CONVERT </Link>
           {/* <Link to='/paymentform'> PAYMENT FORM </Link> */}
           {/* </div> */}
         </nav>

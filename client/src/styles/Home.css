@@ -1,21 +1,24 @@
+:root{
+   --main-bg-color:pink;
+}
+
 .home {
    display: flex;
    flex-direction: column;
    justify-content: center;
-   border: 2px solid blue;
+   /* border: 2px solid blue; */
 }
 
 .home-banner {
-   /* border: 3px solid red; */
    margin-top: 2em;
    text-align: left;
-   /* margin-left: 2em; */
-   /* font-family: 'Caveat', cursive; */
    padding-left: 2em;
+   background-color: var(--main-bg-color);
+   height: 20em;
 }
 
 .home-converter-container {
-   border: 3px solid pink;
+   /* border: 3px solid pink; */
    display: flex;
    justify-content: center;
    margin-top: 2em;

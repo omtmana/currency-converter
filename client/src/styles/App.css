@@ -1,19 +1,19 @@
-:root {
+/* :root {
   --main-bg-color: pink;
-}
+} */
 .App {
   text-align: center;
-  /* font-family: sans-serif; */
-  /* font-family: 'Caveat', cursive; */
-    /* font-family: 'Passions Conflict', cursive; */
-    /* font-family: 'Permanent Marker', cursive; */
-    font-family: 'Urbanist', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 2em;
 }
 
 .nav {
-  background-color: var(--main-bg-color);
+  /* background-color: var(--main-bg-color); */
   height: 2em;
   padding-top: 2em;
+  /* position: left; */
+  text-align: right;
+  /* text-decoration: none; */
 }
+
 
