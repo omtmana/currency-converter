@@ -1,0 +1,16 @@
+.login {
+   border: 2px solid red;
+   height: 10em;
+   width: 35em;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+/* .login-submit-button {
+   margin-top: 2em;
+   padding-top: 2em; 
+   width: 10em; 
+   justify-content: center;
+} */

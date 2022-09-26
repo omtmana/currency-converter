@@ -42,6 +42,7 @@ function App() {
         </Routes>
         {/* </Layout> */}
       </BrowserRouter>
+      <img src='earth.jpeg' />
     </div>
   );
 }
