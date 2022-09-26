@@ -3,9 +3,9 @@ const Home = ({ convert }) => {
 
    return (
       <div className="home">
-            <div className="home-banner">
-            <h1 style={{ fontSize: "3.5em", fontFamily:"Caveat"}}> Money Transfer</h1>
-               <h4> Pera Padala <br></br> 24/7</h4>
+            <div className="home-banner-container">
+            <h1 style={{ fontSize: "3.5em", fontFamily:"Caveat"}}> Money <span className='transfer-animation'> Transfer </span></h1>
+               <h4> Pera Padala <br></br> 24/7</h4> <img src='earth.jpeg' />
             </div>
             <div className="home-converter-container">
                <div className="home-usd">
