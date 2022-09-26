@@ -5,18 +5,18 @@ const Home = ({ convert }) => {
       <div className="home">
             <div className="home-banner-container">
             <h1 style={{ fontSize: "3.5em", fontFamily:"Caveat"}}> Money <span className='transfer-animation'> Transfer </span></h1>
-               <h4> Pera Padala <br></br> 24/7</h4> <img src='earth.jpeg' />
+               <h4> Pera Padala <br></br> 24/7</h4>
             </div>
             <div className="home-converter-container">
                <div className="home-usd">
-                  <h3> US Dollar</h3>
+               <h3 style={{ fontFamily: "Caveat", letterSpacing:".1em" }}> US Dollar</h3>
                   <h4> $ 1.00 </h4>
                </div>
                <div>
-               <h3> ⇌ </h3>
+               <h3 style={{fontSize:"2em", fontWeight:"900"}}> ⇌ </h3>
                </div>
                <div className="home-php">
-                  <h3> Philippine Peso </h3>
+               <h3 style={{ fontFamily: "Caveat", letterSpacing: ".1em"}}> Philippine Peso </h3>
                   {convert.map((result) => (
                      <h4> {result.result.toFixed(2)}</h4>
                   ))}
@@ -27,16 +27,3 @@ const Home = ({ convert }) => {
 }
 
 export default Home;
-
-{/* <table>
-   <tr>
-      <th> USD </th>
-      <th> PHP </th>
-   </tr>
-   <tr>
-      <td> 1 </td>
-      {convert.map((result) => (
-         <td> {result.result.toFixed(2)}</td>
-      ))}
-   </tr>
-</table> */}
