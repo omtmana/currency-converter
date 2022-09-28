@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Convert from './pages/Convert';
+import Profile from './pages/Profile';
 import PaymentForm from './components/PaymentForm';
 // import Header from './components/Header'
 // import Layout from './components/Layout';
@@ -29,6 +30,7 @@ function App() {
           <Link to='/login' style={{ textDecoration: "none" }}> LOGIN </Link>
           <Link to='/signup' style={{ textDecoration: "none" }}> SIGNUP </Link>
           <Link to='/convert' style={{ textDecoration: "none" }}> CONVERT </Link>
+          <Link to='/profile' style={{ textDecoration: "none" }}> PROFILE </Link>
           {/* <Link to='/paymentform'> PAYMENT FORM </Link> */}
           {/* </div> */}
         </nav>
@@ -38,6 +40,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/convert' element={<Convert convert={convert} />} />
+          <Route path='/profile' element={<Profile />} />
           {/* <Route path='/paymentform' element={<PaymentForm />} /> */}
         </Routes>
         {/* </Layout> */}
