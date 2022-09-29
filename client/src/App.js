@@ -13,6 +13,7 @@ import PaymentForm from './components/PaymentForm';
 
 function App() {
   const [convert, setConvert] = useState([])
+  const [user, setUser] = useState([])
 
   useEffect(() => {
     fetch('https://api.exchangerate.host/convert?from=USD&to=PHP')
@@ -20,6 +21,14 @@ function App() {
       .then((convert) => setConvert([convert]))
     // .then((data) => console.log(data))
   }, [])
+
+  useEffect(() => {
+    fetch('/users')
+      .then(res => res.json())
+      .then(user => setUser(user))
+      console.log(user)
+  }, [])
+
   
   return (
     <div className="App">
@@ -40,7 +49,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/convert' element={<Convert convert={convert} />} />
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/profile' element={<Profile user={user} />} />
           {/* <Route path='/paymentform' element={<PaymentForm />} /> */}
         </Routes>
         {/* </Layout> */}

@@ -1,16 +1,13 @@
-import {useState, useEffect} from 'react'
 
-const Profile = () => {
-   const [user, setUser]=useState([])
-
-   useEffect(() => {
-      fetch('/users')
-      .then(res => res.json())
-      .then(user => setUser(user))
-   })
+const Profile = ({user}) => {
+   const {email, first_name} = user 
 
    return (
-      <p> Profile </p>
+      <div className='profile'>
+         <div className='profile-header'>
+            <h1>{first_name}</h1>
+         </div>
+      </div>
    )
 }
 
