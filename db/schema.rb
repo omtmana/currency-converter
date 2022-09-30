@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_21_153105) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_30_141011) do
+  create_table "friendships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_friendships_on_friend_id"
+    t.index ["user_id"], name: "index_friendships_on_user_id"
+  end
+
   create_table "transactions", force: :cascade do |t|
     t.integer "value"
     t.string "user_id"
@@ -40,4 +49,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_153105) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "friendships", "friends"
+  add_foreign_key "friendships", "users"
 end
