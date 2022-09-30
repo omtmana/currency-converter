@@ -1,5 +1,6 @@
 
-const Profile = () => {
+const Profile = ({user}) => {
+   // console.log('user',user)
    return (
       <p> Profile </p>
    )

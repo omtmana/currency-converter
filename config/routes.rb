@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   #Transactions.rb
   get '/transactions', to: 'transactions#index'
   post '/transactions', to: 'transaction#create'
+
+  #Friendships.rb
+  post '/friendships', to: 'friendships#create'
 end
