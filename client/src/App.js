@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Convert from './pages/Convert';
 import Profile from './pages/Profile';
-import PaymentForm from './components/PaymentForm';
+// import PaymentForm from './components/PaymentForm';
 // import Header from './components/Header'
 // import Layout from './components/Layout';
 
@@ -16,16 +16,16 @@ function App() {
   const [user, setUser] = useState([])
 
   useEffect(() => {
-    fetch('/users')
-    .then(res => res.json)
-    .then((data) => console.log(data))
-  },[])
-
-  useEffect(() => {
     fetch('https://api.exchangerate.host/convert?from=USD&to=PHP')
       .then(res => res.json())
       .then((convert) => setConvert([convert]))
     // .then((data) => console.log(data))
+  }, [])
+
+  useEffect(() => {
+    fetch(`/users`)
+      .then(res => res.json())
+      .then((user) => setUser(user))
   }, [])
   
   return (

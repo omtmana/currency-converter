@@ -1,8 +1,14 @@
+import ProfileContainer from "../components/ProfileContainer";
 
-const Profile = ({user}) => {
-   // console.log('user',user)
+const Profile = ({ user }) => {
    return (
-      <p> Profile </p>
+      <div>
+         {
+            user.map((user) => {
+               return <ProfileContainer key={user.id} user={user}/>
+            })
+         }
+      </div>
    )
 }
 
