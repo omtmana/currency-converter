@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  # Users.rb
-  get '/users', to: 'users#index'
-  get '/users/:id', to: 'users#show'
-  # get '/me', to: 'users#show'
-  # post '/signup', to: 'users#create'
-  post '/users', to: 'users#create'
-  patch '/users/:id', to: 'users#update'
-  # delete 'users/:id', to: 'users#destroy'
+  # Users Controller
+  get '/users', to: "users#index" 
+  post "/signup", to: "users#create"
+  get "/me", to: "users#show"
   
-  #Transactions.rb
+  # Sessions Controller
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+  
+  #Transactions Controller
   get '/transactions', to: 'transactions#index'
   post '/transactions', to: 'transaction#create'
 
-  #Friendships.rb
+  #Friendships Controller
   post '/friendships', to: 'friendships#create'
 end

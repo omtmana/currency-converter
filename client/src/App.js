@@ -22,11 +22,25 @@ function App() {
     // .then((data) => console.log(data))
   }, [])
 
+  // useEffect(() => {
+  //   // auto-login
+  //   fetch(`/me`)
+  //     .then(res => res.json())
+  //     .then((user) => setUser(user))
+  // }, [])
+
   useEffect(() => {
-    fetch(`/users`)
-      .then(res => res.json())
-      .then((user) => setUser(user))
+    // auto-login
+    fetch('/me')
+    .then((res) => {
+      if (res.ok) {
+        res.json()
+        .then((user) => setUser(user))
+      }
+    })
   }, [])
+
+  if (!user) return <Login setUSer={setUser} />;
   
   return (
     <div className="App">
@@ -45,7 +59,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home convert={convert}/>} />
           <Route path='/profile' element={<Profile user={user} />}/>
-          <Route path='/login' element={<Login />} />
+          <Route path='/login' element={<Login setUser={setUser}/>} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/convert' element={<Convert convert={convert} />} />
           {/* <Route path='/paymentform' element={<PaymentForm />} /> */}

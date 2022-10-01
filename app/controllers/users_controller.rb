@@ -1,22 +1,24 @@
 class UsersController < ApplicationController
-#   get '/users', to: 'users#index'
-#   get '/users/:id', to: 'users#show'
-#   # get '/me', to: 'users#show'
-#   post '/signup', to: 'users#create'
-#   patch '/users/:id', to: 'users#update'
+   skip_before_action :authorize, only: :create
+
    def index
       render json: User.all
    end
 
    def show
-      user = User.find_by!(id: params[:id])
-      if user.valid?
-         render json: user, status: 202
-      else
-         render json: {error: 'Does not exist'}, status: 404
-      end
+      render json: @current_user
    end
 
    def create
+      user = User.create!(user_params)
+      session[:user_id] = user.id
+      render json: user, status: :created
+   end
+
+   private
+
+   def user_params
+      params.permit(:first_name, :last_name, :street_number, :street_name, :apartment_number,
+      :city, :state, :country, :zipcode)
    end
 end
