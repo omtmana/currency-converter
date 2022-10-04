@@ -35,7 +35,7 @@ const Login = ({ setUser }) => {
    return (
       <div className="login">
          <div className='login-form'>
-            <p style={{ fontSize: "2em", fontFamily: "Caveat", fontWeight: "900" }} > Login </p>
+            <p style={{ fontSize: "2.2em", fontFamily: "Caveat", fontWeight: "900" }} > Login </p>
             <form>
                <div>
                <input type='text'
@@ -55,6 +55,8 @@ const Login = ({ setUser }) => {
                </div>
             </form>
             <button className='login-submit-button' onSubmit={handleSubmit}> Submit </button>
+            <p style={{ fontSize: '12px', color: '#349BBC'}}>Forgot email or password?</p>
+            <p style={{fontSize: '12px'}}> Don't have account? <span style={{ fontSize: '12px', color: '#349BBC' }}>Sign up!</span> </p>
          </div>
       </div>
    )

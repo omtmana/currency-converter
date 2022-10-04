@@ -8,18 +8,23 @@
 }
 
 .login-form {
-   border: 2px solid #E06308;
+   border: 2px solid #FFA347;
    width: 15em;
    padding-bottom: 5em;
    border-radius: 1em;
+   /* color: red */
 }
 
 .login-email {
    height: 3em;
    width: 17em;
-   /* border-bottom: 1px solid #FF6700 ; */
+   /* border: 1px solid rgb(255, 68, 0) ; */
    /* border-radius: 15px; */
    /* padding-left: 2em; */
+}
+
+::placeholder {
+   color: gray;
 }
 
 .login-password {
@@ -31,7 +36,7 @@
    border: 2px solid #349BBC;
    background-color: #349BBC;
    color: whitesmoke;
-   letter-spacing: 1px;
+   letter-spacing: 1.6px;
    height: 3em;
    width: 15em;
    border-radius: 1em;
