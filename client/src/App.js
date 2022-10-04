@@ -60,7 +60,7 @@ function App() {
           <Route path='/' element={<Home convert={convert}/>} />
           <Route path='/profile' element={<Profile user={user} />}/>
           <Route path='/login' element={<Login setUser={setUser}/>} />
-          <Route path='/signup' element={<Signup />} />
+          <Route path='/signup' element={<Signup user={user} setUser={setUser} />} />
           <Route path='/convert' element={<Convert convert={convert} />} />
           {/* <Route path='/paymentform' element={<PaymentForm />} /> */}
         </Routes>

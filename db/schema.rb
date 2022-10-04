@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_30_141011) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_04_140515) do
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id"
     t.integer "friend_id"
@@ -47,6 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_141011) do
     t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   add_foreign_key "friendships", "friends"
