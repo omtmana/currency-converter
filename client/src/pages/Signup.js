@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const Signup = () => {
+const Signup = ({setUser}) => {
    const [firstName, setFirstName] = useState('')
    const [lastName, setLastName] = useState('')
    const [email, setEmail] = useState('')
@@ -18,13 +18,36 @@ const Signup = () => {
 
    const handleSubmit = ((e) => {
       e.preventDefault();
+      const formData = {
+         'name': `${firstName} ${lastName}`,
+         'email': `${email}`,
+         'password': `${password}`,
+         'birthday': `${birthMonth}/${birthDay}/${birthYear}`,
+         'address': `${streetNum} ${streetName} ${apt} ${city} ${state} ${zipcode} ${country}`
+      }
+      fetch('/signup', {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'applicatio/json',
+         },
+         body: JSON.stringify(formData)
+      }).then((res) => {
+         if (res.ok) {
+            res.json().then((user) => setUser(user))
+            // navigate('/profile')
+            console.log(formData)
+         } 
+         // else {
+         //    res.json().then((data) = alert(data.error))
+         // }
+      })
    })
    return (
       <div className="signup">
          <div className="form-signup-main-container">
             <form onSubmit={handleSubmit}>
                <div className="form-signup-name">
-                  <p> Sign up to send money to your loved ones</p>
+                  <p> Sign up to send money to your loved ones today!</p>
                   <input
                      type='text'
                      placeholder="First Name"

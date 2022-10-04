@@ -17,12 +17,12 @@
 }
 
 img {
-  width: 20em;
-  position: absolute;
+  width: 10em;
+  position:absolute;
   /* left: 1px; */
-  right: 0px;
+  right: 0em;
   /* top: 145px; */
-  bottom: 10px;
+  bottom: 0px;
   z-index: -1;
 }
 
