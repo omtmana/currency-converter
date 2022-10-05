@@ -66,7 +66,7 @@ function App() {
         </Routes>
         {/* </Layout> */}
       </BrowserRouter>
-      <img src='earth.jpeg' />
+      {/* <img src='earth.jpeg' /> */}
     </div>
   );
 }

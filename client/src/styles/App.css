@@ -16,14 +16,14 @@
   /* text-decoration: none; */
 }
 
-img {
+/* img {
   width: 10em;
   position:absolute;
-  /* left: 1px; */
+  left: 1px;
   right: 0em;
-  /* top: 145px; */
+  top: 145px;
   bottom: 0px;
   z-index: -1;
-}
+} */
 
 
