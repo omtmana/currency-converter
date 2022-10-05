@@ -48,8 +48,9 @@ const Signup = ({ setUser }) => {
          <div className="form-signup-main-container">
             <form onSubmit={handleSubmit}>
                <div className="form-signup-name">
-                  <p> <span style={{ fontFamily: 'Caveat', fontSize: '2em'}}>Sign up</span></p>
+                  <h1> <span style={{ fontFamily: 'Caveat', fontSize: '1em', color: '#FFA347'}}>Sign up</span></h1>
                   <div>
+                     <p>  Name </p>
                      <input
                         type='text'
                         placeholder="First Name"
@@ -70,6 +71,7 @@ const Signup = ({ setUser }) => {
                {/* <br></br> */}
                <div className="form-signup-login">
                   <div>
+                     <p> Login Credentails </p>
                      <input
                         type='text'
                         placeholder='Email'
@@ -86,6 +88,7 @@ const Signup = ({ setUser }) => {
                </div>
                <div className="form-signup-dob">
                   <div>
+                     <p> Date of Birth</p>
                      <input
                         type='text'
                         placeholder='MM'
@@ -112,6 +115,7 @@ const Signup = ({ setUser }) => {
                </div>
                <div className="form-signup-address">
                   <div>
+                     <p> Address </p>
                      <input
                         type='text'
                         placeholder='Street Number'

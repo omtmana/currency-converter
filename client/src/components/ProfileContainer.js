@@ -1,9 +1,9 @@
 
 const ProfileContainer = ({user}) => {
-   const {first_name} = user
+   const {name, country} = user
    return(
       <div>
-         <p> {first_name}</p>
+         
       </div>
    )
 }

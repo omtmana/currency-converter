@@ -1,4 +1,5 @@
 import ProfileContainer from "../components/ProfileContainer";
+import '../styles/Profile.css'
 
 const Profile = ({ user }) => {
    return (
