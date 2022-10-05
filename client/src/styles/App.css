@@ -8,22 +8,11 @@
 }
 
 .nav {
-  /* background-color: var(--main-bg-color); */
   height: 2em;
   padding-top: 2em;
   /* position: left; */
   text-align: right;
   /* text-decoration: none; */
 }
-
-/* img {
-  width: 10em;
-  position:absolute;
-  left: 1px;
-  right: 0em;
-  top: 145px;
-  bottom: 0px;
-  z-index: -1;
-} */
 
 
