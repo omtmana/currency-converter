@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/users', to: "users#index" 
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
+  patch "/users", to: 'users#update'
   
   # Sessions Controller
   post "/login", to: "sessions#create"

@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_140515) do
     t.string "name"
     t.string "address"
     t.string "birthday"
+    t.string "image", default: "profile.jpeg"
   end
 
   add_foreign_key "friendships", "friends"

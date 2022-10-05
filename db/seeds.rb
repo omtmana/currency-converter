@@ -14,6 +14,7 @@ user1 = User.create(
    country: 'Philippines',
    zipcode: 1200,
    password_digest: 1234
+   image: 'profile.jpeg'
 )
 
 user2 = User.create(
