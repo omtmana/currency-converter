@@ -6,19 +6,35 @@ class UsersController < ApplicationController
    end
 
    def show
-      render json: @current_user
+    @current_user = User.find(session[:user_id])
+    render json: @current_user
    end
 
-   def create
-      user = User.create!(user_params)
+  def create
+    user = User.new(user_params)
+    if user.save
       session[:user_id] = user.id
       render json: user, status: :created
-   end
+    else
+      render json: {error: 'Email Taken, Please Login'}, status: 422
+    end
+  end   
+
+   def update 
+    user = User.find_by(id: session[:user_id])
+    if user.update(patch_params)
+      render json: user, status: :created
+    else 
+      render json: {error: user.errors.full_messages}
+    end
+  end
+
+
 
    private
 
    def user_params
       params.permit(:first_name, :last_name, :street_number, :street_name, :apartment_number,
-      :city, :state, :country, :zipcode,:name, :password_digest, :email)
+      :city, :state, :country, :zipcode,:name, :password, :email)
    end
 end
